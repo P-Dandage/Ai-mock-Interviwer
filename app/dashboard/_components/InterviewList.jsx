@@ -16,11 +16,12 @@ function InterviewList() {
         user&&GetInterviewList();
     },[user])
 
-    useEffect(()=>{
-        if(interviewlist)
-            console.log("Interview : "+interviewlist[0].createdBy);
-
-    },[interviewlist])
+    useEffect(() => {
+      if (interviewlist && Array.isArray(interviewlist) && interviewlist.length > 0) {
+          console.log("Interview : " + interviewlist[0].createdBy);
+      }
+  }, [interviewlist]);
+  
 
     const GetInterviewList=async()=>{
         const results=await db.select().from(mockInterview).where(eq(mockInterview.createdBy,user?.primaryEmailAddress?.emailAddress )).orderBy(desc(mockInterview.id))

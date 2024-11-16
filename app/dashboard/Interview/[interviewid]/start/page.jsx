@@ -40,7 +40,7 @@ function  StartInterview({params}) {
    
         {/* Questions */}
          <QuestionSections MockInterviewQuestion={MockInterviewQuestion}
-         activeQuestion={activeQuestion}></QuestionSections>
+         activeQuestion={activeQuestion} setActiveQuestion={setActiveQuestion}></QuestionSections>
       
 
         {/* Videos/audio recording  */}

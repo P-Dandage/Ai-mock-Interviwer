@@ -2,7 +2,7 @@
 import { Lightbulb, Volume2 } from 'lucide-react';
 import React from 'react'
 
-function QuestionSections({MockInterviewQuestion,activeQuestion}) {
+function QuestionSections({MockInterviewQuestion,activeQuestion,setActiveQuestion}) {
   
  
   const handleSpeakQuestion = () => {
@@ -36,11 +36,11 @@ function QuestionSections({MockInterviewQuestion,activeQuestion}) {
         <div className='p-5 border rounded-lg my-10'>
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 '>
             {MockInterviewQuestion && MockInterviewQuestion.map((question, index) => (
-        <h2 className={`'h-3 p-2 bg-secondary rounded-full text-xs md:text-sm text-center cursor-pointer' ${activeQuestion==index && 'bg-slate-950 text-white'}`} key={index} >Question #{index+1}</h2>
+        <h2 className={`'h-3 p-2 bg-secondary rounded-full text-xs md:text-sm text-center cursor-pointer' ${activeQuestion==index && 'bg-slate-950 text-white'}`} key={index} onClick={()=>{setActiveQuestion(index)}}  >Question #{index+1}</h2>
             ))}
           </div> 
         
-         <h2 className='my-5 text-md md:text-lg' >{MockInterviewQuestion[activeQuestion].Question}</h2>  
+         <h2 className='my-5 text-md md:text-lg' >{MockInterviewQuestion[activeQuestion].Question} </h2>  
           <Volume2 className=" cursor-pointer hover:scale-150" onClick={handleSpeakQuestion}></Volume2> 
           <div className=' border rounded-lg p-5 bg-blue-100 mt-20'>
             <h2 className='flex gap-2 item-center text-blue-700 '>

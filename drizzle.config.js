@@ -5,6 +5,6 @@ export default {
     schema: "./utils/schema.js",
     dialect: 'postgresql',
     dbCredentials: {
-      url:'postgresql://ai-interview_owner:oY74xfqIaJnr@ep-tiny-voice-a589u91s.us-east-2.aws.neon.tech/ai-interview?sslmode=require',
+      url:'postgresql://ai-interview_owner:oLBN6c1iptMw@ep-raspy-bush-a8pie8l2.eastus2.azure.neon.tech/ai-interview?sslmode=require',
     }
   };
