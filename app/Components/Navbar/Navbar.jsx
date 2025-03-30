@@ -16,7 +16,7 @@ const Navbar = ({ setPage }) => {
   return (
     <div className="navbar">
       <div className="nav">
-        <img src="./logo_2.png" alt="Logo" />
+        <img src="./logo_2.png" alt="Logo"  onClick={() => setPage("home")}/>
 
         <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
           <span className={isOpen ? "bar open" : "bar"}></span>
