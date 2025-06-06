@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
       <head>
           {/* Favicon */}
-          <link rel="icon" type="image/svg+xml" href="/logo_2.png" />
+          <link rel="icon" type="image/svg+xml" />
 
           {/* Google Fonts (For Material Symbols & Liter, use <link> as fallback) */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <Toaster />
           {children}
-          <footer>© 2025 IntraAi. All rights reserved.</footer>
+          {/* <footer >© 2025 IntraAi. All rights reserved.</footer> */}
         </body>
       </html>
     </ClerkProvider>

@@ -1,5 +1,14 @@
 
-import { pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
+import { pgTable, serial, varchar, text, timestamp } from "drizzle-orm/pg-core";
+
+
+export const contact = pgTable('contact', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  email: varchar('email', { length: 255 }).notNull(),
+  message: text('message').notNull(),
+  createdAt: timestamp('createdAt').defaultNow().notNull(),
+});
 
 
 export const mockInterview=pgTable('mockInterview',{
@@ -28,3 +37,6 @@ export const useAnswer=pgTable('userAnswer',{
 
 
 })
+
+
+

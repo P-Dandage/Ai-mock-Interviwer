@@ -15,11 +15,10 @@ import Contact from "./Components/Contact/Contact";
 
 
 export default function Home() {
-  const [page, setPage] = useState("home"); // State to track active page
-
+  const [page, setPage] = useState("home"); 
   return (
     <>
-    <Navbar setPage={setPage} /> {/* Pass setPage to Navbar */}
+    <Navbar setPage={setPage} />
 
     {page === "home" && (
       <>
@@ -44,12 +43,6 @@ export default function Home() {
       <Footer />
     </div>
   </>
-    // <div>
-    //   Hello
-    //   <Link href={'/dashboard'}>
-    //    <Button>Click  </Button>
-    //   </Link>
-     
-    // </div>
+   
      );
 }

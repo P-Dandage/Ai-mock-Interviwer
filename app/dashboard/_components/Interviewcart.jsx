@@ -1,32 +1,31 @@
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import './Interviewcart.css';
 
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import React from 'react'
+function Interviewcart({ interview }) {
+  const router = useRouter();
 
-function Interviewcart({interview}) {
-  const router=useRouter();
-  const onStart=()=>{
-    router.push('/dashboard/Interview/'+interview?.mockId)
+  const onStart = () => {
+    router.push('/dashboard/Interview/' + interview?.mockId);
+  };
 
-  }
-  const onFeedback=()=>{
-    router.push('/dashboard/Interview/'+interview?.mockId+"/Feedback")
-  }
+  const onFeedback = () => {
+    router.push('/dashboard/Interview/' + interview?.mockId + "/Feedback");
+  };
 
   return (
-    <div className='border shadow-sm rounded-lg p-3'>
-      <h2 className='font-bold '>{interview?.jobPosition}</h2>
-      <h2 className='text-sm text-gray-600'>{interview?.jobExperience} Years of Experience</h2>
-      <h2 className='text-xs text-gray-400'>Created At :{interview.createdAt}</h2>
-        <div className='flex justify-between mt-2 gap-5  '>
-           <Button size='sm' variant='outline' className="w-full" onClick={onFeedback}> Feedback</Button>
-          
-             <Button size='sm'className="w-full"onClick={onStart} >Start</Button>
-         
-        </div>
+    <div className="interview-card">
+      <h2 className="interview-title">{interview?.jobPosition}</h2>
+      <h2 className="interview-experience">{interview?.jobExperience} Years of Experience</h2>
+      <h2 className="interview-date">Created At: {interview.createdAt}</h2>
+      
+      <div className="button-container"> 
+               <Button size="sm" className="custom-button_1" onClick={onStart}>Start</Button>
+               <Button size="sm" className="custom-button_2" onClick={onFeedback}>Feedback</Button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Interviewcart
+export default Interviewcart;

@@ -33,10 +33,10 @@ function QuestionSections({MockInterviewQuestion,activeQuestion,setActiveQuestio
     }
   };
     return MockInterviewQuestion&&(
-        <div className='p-5 border rounded-lg my-10'>
-          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 '>
+        <div className='p-3 border rounded-lg my-10 '>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 '>
             {MockInterviewQuestion && MockInterviewQuestion.map((question, index) => (
-        <h2 className={`'h-3 p-2 bg-secondary rounded-full text-xs md:text-sm text-center cursor-pointer' ${activeQuestion==index && 'bg-slate-950 text-white'}`} key={index} onClick={()=>{setActiveQuestion(index)}}  >Question #{index+1}</h2>
+        <h2 className={`'h-3  p-2 bg-secondary rounded-full text-xs md:text-sm text-center cursor-pointer' ${activeQuestion==index && 'bg-slate-950 text-white'}`} key={index} onClick={()=>{setActiveQuestion(index)}}  >Question #{index+1}</h2>
             ))}
           </div> 
         

@@ -1,4 +1,6 @@
+// Contact.jsx
 import { useState } from "react";
+import { saveContactData } from '@/utils/saveContact';
 import "./Contact.css";
 
 const Contact = () => {
@@ -9,22 +11,34 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      await saveContactData(formData);
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      setError("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="contact-container">
-      <h1>Contact <span>Us</span></h1>
+      <h1>
+        Contact <span>Us</span>
+      </h1>
       <p>We'd love to hear from you! Please fill out the form below.</p>
 
       {submitted ? (
@@ -42,6 +56,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
+              disabled={loading}
             />
           </div>
 
@@ -53,6 +68,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              disabled={loading}
             />
           </div>
 
@@ -63,10 +79,15 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
+              disabled={loading}
             ></textarea>
           </div>
 
-          <button type="submit">Submit</button>
+          {error && <p className="error-message">{error}</p>}
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Submit"}
+          </button>
         </form>
       )}
     </div>
