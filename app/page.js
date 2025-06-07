@@ -41,6 +41,7 @@ export default function Home() {
 
     <div className="Footer">
       <Footer />
+      
     </div>
   </>
    

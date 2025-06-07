@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <Toaster />
           {children}
-          {/* <footer >© 2025 IntraAi. All rights reserved.</footer> */}
+          { <footer >© 2025 IntraAi. All rights reserved.</footer> }
         </body>
       </html>
     </ClerkProvider>

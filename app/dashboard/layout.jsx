@@ -29,7 +29,7 @@ export default function DashboardLayout({ children }) {
         {children}
       </motion.main>
 
-      {/* Footer: slide up from below */}
+      {/* Footer: slide up from below
       <motion.footer
         className="footer"
         initial={{ y: 50, opacity: 0 }}
@@ -38,7 +38,7 @@ export default function DashboardLayout({ children }) {
         style={{ textAlign: "center", padding: "15px 0", backgroundColor: "#3c65f5", color: "white" }}
       >
         © 2025 IntraAi. All rights reserved.
-      </motion.footer>
+      </motion.footer> */}
     </div>
   );
 }
