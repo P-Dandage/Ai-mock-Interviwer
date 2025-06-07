@@ -24,10 +24,17 @@ function Header() {
         >
           Dashboard
         </li>
+          <li 
+          className={`nav-item ${path === "/dashboard/Feedback-form" ? "nav-item-active" : ""}`} 
+          onClick={() => router.push('/dashboard/Feedback-form')} >
+         Feedback
+
+        </li>
         <li 
-          className={`nav-item ${path === "/dashboard/Questions" ? "nav-item-active" : ""}`} 
-          onClick={() => router.push('/dashboard/Questions')} >
-          Questions
+          className={`nav-item ${path === "/dashboard/ConfidenceBooster" ? "nav-item-active" : ""}`} 
+          onClick={() => router.push('/dashboard/ConfidenceBooster')} >
+          Confidence Booster
+
         </li>
        
 

@@ -38,5 +38,14 @@ export const useAnswer=pgTable('userAnswer',{
 
 })
 
+export const feedback = pgTable('feedback', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  interviewTopic: varchar('interviewTopic', { length: 255 }).notNull(),
+  email: varchar('email', { length: 255 }).notNull(),
+  feedbackText: text('feedbackText').notNull(),
+  createdAt: timestamp('createdAt').defaultNow().notNull(),
+});
+
 
 
