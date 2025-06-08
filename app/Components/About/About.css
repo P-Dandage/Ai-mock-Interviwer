@@ -110,6 +110,7 @@
 
 .social svg:hover {
     transform: scale(1.6) translateY(-5px);  
+       color: rgb(60, 101, 245);;
 }
 
 

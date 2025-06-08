@@ -48,7 +48,7 @@ function  StartInterview({params}) {
          activeQuestion={activeQuestion} InterviewData={InterviewData}></RecordAnswerSection>
        
      </div>
-     <div className='flex flex-row justify-end gap-10 '>
+     <div className='flex flex-row justify-end gap-10 mb-6'>
       {activeQuestion>0&&
       <Button onClick={()=>setActiveQuestion(activeQuestion-1)}>Previous Question</Button>}
       {activeQuestion!=MockInterviewQuestion.length-1 &&
