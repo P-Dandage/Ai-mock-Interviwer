@@ -151,7 +151,7 @@ function RecordAnswerSection({ MockInterviewQuestion, activeQuestion, InterviewD
   const { isRecording, results, startSpeechToText, stopSpeechToText, setResults } = useSpeechToText({
     continuous: true,
     useLegacyResults: false,
-    lang: 'en-IN',  // <-- Added Indian English locale here
+    lang: 'en-IN',  
   });
 
   // Load BlazeFace model on component mount
@@ -172,7 +172,7 @@ function RecordAnswerSection({ MockInterviewQuestion, activeQuestion, InterviewD
         setIsFaceDetected(predictions.length > 0);
       }
     };
-    const intervalId = setInterval(detectFace, 1000);
+    const intervalId = setInterval(detectFace, 2000);
     return () => clearInterval(intervalId);
   }, [model]);
 
@@ -198,7 +198,7 @@ function RecordAnswerSection({ MockInterviewQuestion, activeQuestion, InterviewD
     const feedbackPrompt = {
       question: MockInterviewQuestion[activeQuestion].Question,
       user_answer: userAnswer.trim(),
-      prompt: "Based on the question and user's answer, provide a rating (1-10) and structured feedback highlighting strengths and areas for improvement in JSON format."
+      prompt: "Based on the question and user's answer, provide a  rating (1-10) give rating as per keywords present in user answers or user answer reletaed to that topic that related to Question and structured feedback highlighting strengths and areas for improvement in JSON format."
     };
 
     try {
