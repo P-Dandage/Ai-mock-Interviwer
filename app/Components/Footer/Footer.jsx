@@ -1,6 +1,13 @@
 import React from 'react'
 import "./Footer.css"
-const Footer = () => {
+import Link from "next/link";
+const Footer = ({ setPage }) => {
+   const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className='footer'>
        <div className='f1'>
@@ -19,12 +26,13 @@ const Footer = () => {
             </svg>
             </div>
        </div>
-       <div className='f2'>
-        <h3> Quick Links</h3>
-        <h5>Featues</h5>
-        <h5>About</h5>
-        <h5>Try This</h5>
-       </div>
+       <div className="f2">
+  <h3>Quick Links</h3>
+  <h5 onClick={() => scrollToSection("feature")} style={{ cursor: 'pointer' }}>Features</h5>
+  <h5 onClick={() => scrollToSection("about")} style={{ cursor: 'pointer' }}>About</h5>
+  <Link href={'/dashboard'}><h5 >Try This</h5></Link> 
+</div>
+
        <div className='f3'>
         <h3>Contact Us</h3>
         <h5>Email :- abc@mail.com</h5>

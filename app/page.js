@@ -25,7 +25,7 @@ export default function Home() {
         <div className="header" id="Home">
           <Main_section />
         </div>
-        <div className="feature">
+        <div className="feature" id="feature">
           <Feature />
         </div>
         <div className="how" id="how">
@@ -40,7 +40,7 @@ export default function Home() {
     {page === "Contact" && <Contact></Contact>} 
 
     <div className="Footer">
-      <Footer />
+      <Footer  setPage={setPage}  />
       
     </div>
   </>
