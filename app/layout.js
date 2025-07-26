@@ -29,6 +29,10 @@ export default function RootLayout({ children }) {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward"
           />
+
+             {/* google add links */}
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4009200618862071"
+     crossorigin="anonymous"></script>
           
           {/* Font Awesome (Icons) */}
           <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
