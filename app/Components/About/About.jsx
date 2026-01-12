@@ -8,7 +8,8 @@ const About = () => {
       <p>The developers behind IntraAi</p>
       <div className=' section'>
         <div className='card'>
-          <img src="pd.png" ></img>
+             <img src="person.png" ></img>
+          {/* <img src="pd.png" ></img> */}
             <h4> Prathamesh Dandage</h4> 
             <p>Full Stack Developer</p>
            
