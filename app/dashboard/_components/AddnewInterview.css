@@ -1,0 +1,51 @@
+
+
+.text-2xl{
+  color: rgb(5, 38, 78);
+}
+.text-2xl span{
+  color: rgb(60, 101, 245);;
+}
+.form-container {
+    padding: 20px;
+  }
+  .form-container h2{
+    color: rgb(79, 94, 100);
+
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color:rgb(5, 38, 78); ;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .button-group button {
+    padding: 8px 12px;
+    color: rgb(5, 38, 78);;
+  }
+
+  .button-group .start{
+     background-color: rgb(60, 101, 245);
+     color: white;
+     font-weight: 400;
+  }
